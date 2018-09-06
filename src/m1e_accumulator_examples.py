@@ -186,8 +186,8 @@ def draw_row_of_circles(n, point, color, window):
     """
     # ------------------------------------------------------------------
     # The example below shows one way to solve problems using
-    #   HELPER variables (aka AUXILIARY variables)
-    # In this approach:
+    #     #   HELPER variables (aka AUXILIARY variables)
+    #     # In this approach:
     #  1. You determine all the variables that you need
     #       to construct/draw whatever the problem calls for.
     #       We call these HELPER variables.
