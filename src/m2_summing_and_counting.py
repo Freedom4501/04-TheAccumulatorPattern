@@ -150,8 +150,8 @@ def count_sines_from(m, n):
       -- count_sines_from(9, 9)  returns  1
     """
     answer = count_sines_from(3,9)
-    for k in range(m, n+1):
-        if math.sin(k) < 0.5:
+    for k in range(m,n):
+        if math.sin(k) < 0.5
 
 
     return answer
