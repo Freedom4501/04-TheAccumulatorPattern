@@ -121,7 +121,7 @@ def draw_squares_from_circle(n, circle, window):
         square.attach_to(window)
         circle.attach_to(window)
         moresquare.attach_to(window)
-        
+
     window.render()
 
 
