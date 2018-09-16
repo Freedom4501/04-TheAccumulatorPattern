@@ -11,7 +11,7 @@ before you can implement a solution to the problem in Python.
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
          their colleagues and Mashengjun Li.
 """  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
-
+import math
 import rosegraphics as rg
 
 
@@ -98,7 +98,7 @@ def draw_squares_from_circle(n, circle, window):
       :type window: rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
@@ -115,12 +115,12 @@ def draw_squares_from_circle(n, circle, window):
     for k in range(n):
 
         square = rg.Square(circle.center, circle.radius * 2)
-        center = rg.Point(circle.center,circle.center)
-        center1 = center * k
-        moresquare = rg.Square(center1, square.length_of_each_side)
+        corner = rg.Point(square.center.x+circle.radius * k, square.center.y+circle.radius * k)
+        moresquare = rg.Square(corner,circle.radius*2)
         square.attach_to(window)
         circle.attach_to(window)
         moresquare.attach_to(window)
+
 
     window.render()
 
@@ -300,6 +300,21 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ####################################################################
     # ------------------------------------------------------------------
+
+    for k in range (n):
+        distant = math.sqrt((line2.start.x - rectangle1.get_center().x)**2 + (line2.start.y - rectangle1.get_center().y)**2)
+        line1 = rg.Line(rectangle1.get_center(), rectangle2.get_center())
+        line2 = rg.Line(rectangle1.get_lower_left_corner(), line1.end + distant)
+        line1.thickness = 5
+        line1.color = 'R1_color'
+        line2.color = 'R2_color'
+        line1.attach_to(window)
+        rectangle1.attach_to(window)
+        rectangle2.attach_to(window)
+
+    window.render()
+
+
 
 
 # ----------------------------------------------------------------------
